@@ -121,4 +121,24 @@ class PadController {
             this.renderComments();
         }
     }
+
 }
+document.querySelectorAll('.well-card').forEach(card => {
+    let touchTimer;
+
+    // Start touch
+    card.addEventListener('touchstart', e => {
+        touchTimer = setTimeout(() => {
+            // Trigger your context menu
+            padController.activeWell = card.dataset.well;
+            const menu = document.getElementById('statusMenu');
+            menu.style.left = e.touches[0].pageX + 'px';
+            menu.style.top = e.touches[0].pageY + 'px';
+            menu.classList.add('show');
+        }, 600); // 600ms hold
+    });
+
+    // Cancel if touch ends or moves
+    card.addEventListener('touchend', () => clearTimeout(touchTimer));
+    card.addEventListener('touchmove', () => clearTimeout(touchTimer));
+});
