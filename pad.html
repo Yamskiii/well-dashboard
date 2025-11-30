@@ -79,6 +79,26 @@
   </div>
 </div>
 
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+  import { getDatabase } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyC52QTguwvdZQ4r5z-JC_UOmeiI7CUvp9Q",
+    authDomain: "pad-dashboard-example.firebaseapp.com",
+    projectId: "pad-dashboard-example",
+    storageBucket: "pad-dashboard-example.firebasestorage.app",
+    messagingSenderId: "875327896050",
+    appId: "1:875327896050:web:8989a3b3cf17795bd4d36b",
+    measurementId: "G-EQS42K5F88"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  window.db = getDatabase(app); // <-------- IMPORTANT
+</script>
+
+
     <script src="js/pad.js"></script>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
