@@ -79,6 +79,12 @@ body {
     }
 }
 
+@media (max-width: 1500px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
 @media (max-width: 800px) {
     .dashboard {
         grid-template-columns: repeat(2, 1fr);
@@ -444,3 +450,4 @@ body {
     .comment-sidebar.open { right: 0; }
     .sidebar-header h3 { font-size: 1.5rem; }
 }
+
